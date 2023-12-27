@@ -15,7 +15,7 @@ app.use(cors({
 const PORT = process.env.PORT || 5000;
 
 // Connect to MongoDB (make sure MongoDB is running)
-mongoose.connect(`mongodb+srv://${process.env.db_user}:${process.env.db_pass}@cluster0.tkhncfb.mongodb.net/?retryWrites=true&w=majority`, {
+mongoose.connect(`mongodb+srv://maheshbarapatre14:maheshAtlas2023@cluster0.tkhncfb.mongodb.net/?retryWrites=true&w=majority`, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 });
