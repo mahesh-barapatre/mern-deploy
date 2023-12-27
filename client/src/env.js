@@ -1,3 +1,3 @@
-const backendUrl = "http://localhost:5000"
+const backendUrl = "https://mern-deploy-api-umber.vercel.app/"
 
 export default backendUrl;
