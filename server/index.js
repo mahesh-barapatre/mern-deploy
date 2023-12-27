@@ -13,12 +13,13 @@ app.use(cors({
 }
   ));
 const PORT = process.env.PORT || 5000;
-
+let connected = "not known";
 // Connect to MongoDB (make sure MongoDB is running)
 mongoose.connect(`mongodb+srv://maheshbarapatre14:maheshAtlas2023@cluster0.tkhncfb.mongodb.net/?retryWrites=true&w=majority`, {
   useNewUrlParser: true,
   useUnifiedTopology: true,
-});
+}).then(()=>connected="connected").catch(()=>connected="not connected")
+  ;
 
 // Define a simple schema and model
 const Item = mongoose.model('Item', { name: String });
@@ -28,12 +29,17 @@ app.use(express.json());
 
 // API endpoint to get items from the database
 app.get('/api/items', async (req, res) => {
+  try{
   const items = await Item.find();
   res.json(items);
+  }
+  catch{
+    res.send("error occured!");
+  }
 });
 app.get('/', async (req, res) => {
   
-  res.status(200).send("server working");
+  res.status(200).send("server working", connected);
 });
 
 // API endpoint to add an item to the database
