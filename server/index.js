@@ -6,7 +6,12 @@ const cors = require('cors');
 const app = express();
 
 // Enable CORS for all routes
-app.use(cors());
+app.use(cors({
+  origin: [],
+  method: [GET, POST],
+  credentials: true
+}
+  ));
 const PORT = process.env.PORT || 5000;
 
 // Connect to MongoDB (make sure MongoDB is running)
