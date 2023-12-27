@@ -42,13 +42,11 @@ app.get('/api/items', async (req, res) => {
     res.send("error occured!");
   }
 });
-app.get('/api/test', async (req, res) => {
-  try{
-  return res.json({msg:"fuck"}).send("this is woring i dont know how")
+app.get('/api/test', (req, res) => {
+  
+  res.send("this is woring i dont know how")
   }
-  catch{
-    res.send("error occured!");
-  }
+ 
 });
 app.get('/', async (req, res) => {
   
