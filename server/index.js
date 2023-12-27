@@ -31,6 +31,10 @@ app.get('/api/items', async (req, res) => {
   const items = await Item.find();
   res.json(items);
 });
+app.get('/', async (req, res) => {
+  
+  res.status(200).send("server working");
+});
 
 // API endpoint to add an item to the database
 app.post('/api/items', async (req, res) => {
