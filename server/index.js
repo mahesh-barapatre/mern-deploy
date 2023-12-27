@@ -7,7 +7,7 @@ const app = express();
 
 // Enable CORS for all routes
 app.use(cors({
-  origin: ["https://mern-deploy-client.vercel.app/"],
+  origin: ["https://mern-deploy-client.vercel.app"],
   method: [GET, POST],
   credentials: true
 }
