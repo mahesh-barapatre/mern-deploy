@@ -20,7 +20,7 @@ mongoose.connect(`mongodb+srv://maheshbarapatre14:maheshAtlas2023@cluster0.tkhnc
 
 const db = mongoose.connection;
 
-db.on('error', connected="not done");
+db.on('error',()=> connected="not done");
 db.once('open', () => {
   console.log('Connected to MongoDB');
   connected = "done"
